@@ -4,6 +4,7 @@ import { cubicBezier, motion } from "framer-motion";
 import { Navigation } from "../components/Navigation/Navigation";
 import useSwr from "swr";
 import ReactGa from "react-ga";
+import content from '../config/content.json';
 
 interface indexProps {}
 
@@ -93,7 +94,7 @@ const index: React.FC<indexProps> = () => {
       "background: #242424; padding:5px 5px 5px 0",
     ]);
     console.log.apply(console, [
-      "%c Thanks for stopping by, I’m currently looking to a new team of creative designers and developers.\n",
+      "%c Thanks for stopping by, I'm currently looking to a new team of creative designers and developers.\n",
       "color: #fff; background: #8000ff; padding:5px 0;",
     ]);
   }, []);
@@ -129,33 +130,18 @@ const index: React.FC<indexProps> = () => {
             name="apple-mobile-web-app-status-bar-style"
             content="#10101A"
           />
-          <title>Adeola Adeoti 🚀 &mdash; Frontend Devloper</title>
-          <meta
-            name="description"
-            content="I'm a self-taught Front End Developer and turning ideas into real life products is my calling."
-          />
+          <title>{content.meta.title}</title>
+          <meta name="description" content={content.meta.description} />
           <meta property="og:type" content="website" />
-          <meta
-            property="og:title"
-            content="Adeola Adeoti 🚀 &mdash; Frontend Devloper"
-          />
-          <meta property="og:url" content="https://adeolaadeoti.xyz/" />
-          <meta property="og:image" content="webp/preview-image.png" />
-          <meta
-            property="og:description"
-            content="I'm a self-taught Front End Developer and turning ideas into real life products is my calling."
-          />
-          <meta
-            name="twitter:title"
-            content="Adeola Adeoti 🚀 &mdash; Frontend Devloper"
-          />
-          <meta
-            name="twitter:description"
-            content="I'm a self-taught Front End Developer and turning ideas into real life products is my calling."
-          />
-          <meta name="twitter:image" content="webp/preview-image.png" />
+          <meta property="og:title" content={content.meta.ogTitle} />
+          <meta property="og:url" content={content.meta.ogUrl} />
+          <meta property="og:image" content={content.meta.ogImage} />
+          <meta property="og:description" content={content.meta.ogDescription} />
+          <meta name="twitter:title" content={content.meta.twitterTitle} />
+          <meta name="twitter:description" content={content.meta.twitterDescription} />
+          <meta name="twitter:image" content={content.meta.twitterImage} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://adeolaadeoti.xyz/" />
+          <meta name="twitter:url" content={content.meta.twitterUrl} />
         </Head>
         <audio loop id="audioPlayer" autoPlay style={{ display: "none" }}>
           <source src="sound/preloader.mp3" type="audio/mp3" />
@@ -180,13 +166,9 @@ const index: React.FC<indexProps> = () => {
               animate={{ x: 0, opacity: 1, transition: { ...transition } }}
               className="preloader__right"
             >
-              <p className="preloader__text">HTML</p>
-              <p className="preloader__text">CSS/SCSS</p>
-              <p className="preloader__text">JAVASCRIPT</p>
-              <p className="preloader__text">TYPESCRIPT</p>
-              <p className="preloader__text">REACT JS</p>
-              <p className="preloader__text">NEXT JS</p>
-              <p className="preloader__text">FRAMER MOTION</p>
+              {content.preloader.skills.map((skill, index) => (
+                <p key={index} className="preloader__text">{skill}</p>
+              ))}
             </motion.div>
           </div>
         </motion.div>
@@ -199,20 +181,16 @@ const index: React.FC<indexProps> = () => {
           <header className="header">
             <div className="header__hero">
               <div className="header__hero--heading">
-                <span>turning ideas into </span> <br />
-                <span>real life </span>
-                <span className="header__hero--heading-gradient">
-                  products{" "}
-                </span>
-                <br />
-                <span>is my calling.</span>
+                {content.header.hero.heading.map((line, index) => (
+                  <span key={index}>{line}</span>
+                ))}
               </div>
               <a
                 data-scroll-to
                 className="header__hero--cta"
                 href="#sectionProjects"
               >
-                VIEW PROJECTS
+                {content.header.hero.cta}
               </a>
             </div>
           </header>
@@ -277,242 +255,64 @@ const index: React.FC<indexProps> = () => {
               </div>
             </div>
             <div className="header__footer--right">
-              <a
-                href="https://github.com/adeolaadeoti"
-                rel="noopener"
-                target="_blank"
-              >
-                👾 GH
-              </a>
-              <a
-                href="https://twitter.com/adeolajs"
-                rel="noopener"
-                target="_blank"
-              >
-                🐦 TW
-              </a>
-              <a
-                href="https://www.linkedin.com/in/adeoladev"
-                rel="noopener"
-                target="_blank"
-              >
-                💼 LD
-              </a>
-              <a
-                href="https://www.instagram.com/adeolaadeoti_"
-                rel="noopener"
-                target="_blank"
-              >
-                {" "}
-                📸 IN
-              </a>
+              {content.header.footer.social.map((item, index) => (
+                <a key={index} href={item.url} rel="noopener" target="_blank">
+                  {item.text}
+                </a>
+              ))}
             </div>
           </div>
         </div>
         <main className="container">
-          <p className="about-text">
-            Hello stranger! 👋, my name is adeola and I am a frontend engineer,
-            passionate <br /> about digital products that help people experience
-            everyday life, not endure it.
-          </p>
+          <p className="about-text">{content.about.text}</p>
           <section id="sectionProjects" className="section-projects">
             <h1 className="heading-1">
-              <span>Yeah, I work hard </span> <small>💼</small>
+              <span>{content.projects.title}</span>
             </h1>
-            <p className="paragraph">
-              Each project is unique. Here are some of my works.
-            </p>
+            <p className="paragraph">{content.projects.description}</p>
 
-            <div className="project-card">
-              <div className="project-card__left">
-                <h4 className="heading-4">
-                  NEXT JS, LOCOMOTIVE SCROLL, FRAMER MOTION
-                </h4>
-              </div>
-              <div
-                className="project-card__middle"
-                data-displacement="webp/myDistorsionImage.webp"
-              >
-                <img src="webp/alexxandria-1.webp" alt="alexxandria model" />
-                <img src="webp/alexxandria-2.webp" alt="alexxandria logo" />
-              </div>
-              <div className="project-card__right">
-                <h2
-                  data-scroll
-                  data-scroll-offset="35%"
-                  data-scroll-repeat={true}
-                  data-scroll-class="alexxandria-anim"
-                  className="heading-2"
+            {content.projects.items.map((project, index) => (
+              <div key={index} className="project-card">
+                <div className="project-card__left">
+                  <h4 className="heading-4">{project.title}</h4>
+                  <p>{project.description}</p>
+                </div>
+                <div
+                  className="project-card__middle"
+                  data-displacement={project.displacement}
                 >
-                  Alexxandria
-                  <br /> Forque
-                </h2>
-                <a
-                  rel="noopener"
-                  target="_blank"
-                  href="https://alexxandria.vercel.app/"
-                  className="project-card__link"
-                >
-                  VISIT THE WEBSITE
-                </a>
-                <div className="project-card__socials">
-                  <a href="#">
-                    <img src="svg/dribble.svg" alt="dribble icon" />
-                  </a>
+                  <img src={project.image1} alt={project.title} />
+                  <img src={project.image2} alt={project.title} />
+                </div>
+                <div className="project-card__right">
+                  <h2
+                    data-scroll
+                    data-scroll-offset="35%"
+                    data-scroll-repeat={true}
+                    data-scroll-class={`${project.title.replace(/\s+/g, '-')}-anim`}
+                    className="heading-2"
+                  >
+                    {project.title}
+                    <br /> {project.subtitle}
+                  </h2>
                   <a
                     rel="noopener"
                     target="_blank"
-                    href="https://github.com/adeolaadeoti/alexxandria"
+                    href={project.url}
+                    className="project-card__link"
                   >
-                    <img src="svg/github.svg" alt="github icon" />
+                    VISIT THE WEBSITE
                   </a>
+                  <div className="project-card__socials">
+                    {project.socials.map((social, index) => (
+                      <a key={index} href={social.url} rel="noopener" target="_blank">
+                        <img src={social.icon} alt={social.text} />
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-card__left">
-                <h4 className="heading-4">REACT JS, FRAMER MOTION</h4>
-              </div>
-              <div
-                className="project-card__middle"
-                data-displacement="webp/myDistorsionImage.webp"
-              >
-                <img src="webp/safarika-1.webp" alt="safarika" />
-                <img src="webp/safarika-2.webp" alt="safarika logo" />
-              </div>
-              <div className="project-card__right">
-                <h2
-                  data-scroll
-                  data-scroll-offset="35%"
-                  data-scroll-repeat={true}
-                  data-scroll-class="safarika-anim"
-                  className="heading-2"
-                >
-                  Safarika
-                </h2>
-                <a
-                  rel="noopener"
-                  target="_blank"
-                  href="https://safarika-adeola.netlify.app/"
-                  className="project-card__link"
-                >
-                  VISIT THE WEBSITE
-                </a>
-                <div className="project-card__socials">
-                  <a
-                    rel="noopener"
-                    target="_blank"
-                    href="https://dribbble.com/shots/12361426-Safarika-Adventure"
-                  >
-                    <img src="svg/dribble.svg" alt="dribble icon" />
-                  </a>
-                  <a
-                    rel="noopener"
-                    target="_blank"
-                    href="https://github.com/adeolaadeoti/safarika"
-                  >
-                    <img src="svg/github.svg" alt="github icon" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-card__left">
-                <h4 className="heading-4">
-                  NEXT JS, LOCOMOTIVE SCROLL, FRAMER MOTION
-                </h4>
-              </div>
-              <div
-                className="project-card__middle"
-                data-displacement="webp/myDistorsionImage.webp"
-              >
-                <img src="webp/heatrow-1.webp" alt="heatrow" />
-                <img src="webp/heatrow-2.webp" alt="heatrow logo" />
-              </div>
-              <div className="project-card__right">
-                <h2
-                  data-scroll
-                  data-scroll-offset="35%"
-                  data-scroll-repeat={true}
-                  data-scroll-class="heatrow-anim"
-                  className="heading-2"
-                >
-                  Heatrow
-                  <br /> Estate
-                </h2>
-                <a
-                  href="https://heatrow.vercel.app/"
-                  rel="noopener"
-                  target="_blank"
-                  className="project-card__link"
-                >
-                  VISIT THE WEBSITE
-                </a>
-                <div className="project-card__socials">
-                  <a href="#">
-                    <img src="svg/dribble.svg" alt="dribble icon" />
-                  </a>
-                  <a
-                    rel="noopener"
-                    target="_blank"
-                    href="https://github.com/adeolaadeoti/heatrow"
-                  >
-                    <img src="svg/github.svg" alt="github icon" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-card__left">
-                <h4 className="heading-4">HTML, SCSS, JAVASCRIPT, GSAP</h4>
-              </div>
-              <div
-                className="project-card__middle"
-                data-displacement="webp/myDistorsionImage.webp"
-              >
-                <img src="webp/adeola-1.webp" alt="adeola model" />
-                <img src="webp/adeola-2.webp" alt="adeola logo" />
-              </div>
-              <div className="project-card__right">
-                <h2
-                  data-scroll
-                  data-scroll-offset="35%"
-                  data-scroll-repeat={true}
-                  data-scroll-class="adeola-anim"
-                  className="heading-2"
-                >
-                  AdeolaAdeoti
-                  <br /> version 1
-                </h2>
-                <a
-                  rel="noopener"
-                  target="_blank"
-                  href="https://github.com/adeolaadeoti/adeolaadeoti-portfolio"
-                  className="project-card__link"
-                >
-                  VIEW SOURCE CODE
-                </a>
-                <div className="project-card__socials">
-                  <a
-                    rel="noopener"
-                    target="_blank"
-                    href="https://dribbble.com/shots/12338926-Adeola-Adeoti-Portfolio"
-                  >
-                    <img src="svg/dribble.svg" alt="dribble icon" />
-                  </a>
-                  <a
-                    rel="noopener"
-                    target="_blank"
-                    href="https://github.com/adeolaadeoti/adeolaadeoti-portfolio"
-                  >
-                    <img src="svg/github.svg" alt="github icon" />
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </section>
           <section
             data-scroll
@@ -573,7 +373,7 @@ const index: React.FC<indexProps> = () => {
               <span>Sold Yet? </span> <small>🤙</small>
             </h1>
             <h2 className="section-contact__h2">
-              Thanks for stopping by, I’m currently looking to join a new team
+              Thanks for stopping by, I'm currently looking to join a new team
               of creative designers and developers. If you think we might be a
               good fit for one another, send me an
               <a
@@ -592,34 +392,11 @@ const index: React.FC<indexProps> = () => {
             </h1>
             <p className="paragraph">Connect with me online</p>
             <div className="section-socials--links">
-              <a
-                href="https://github.com/adeolaadeoti"
-                rel="noopener"
-                target="_blank"
-              >
-                👾 GitHub
-              </a>
-              <a
-                href="https://twitter.com/adeolajs"
-                rel="noopener"
-                target="_blank"
-              >
-                🐦 Twitter
-              </a>
-              <a
-                href="https://www.linkedin.com/in/adeoladev"
-                rel="noopener"
-                target="_blank"
-              >
-                💼 LinkedIn
-              </a>
-              <a
-                href="https://www.instagram.com/adeolaadeoti_"
-                rel="noopener"
-                target="_blank"
-              >
-                📸 Instagram
-              </a>
+              {content.socials.map((item, index) => (
+                <a key={index} href={item.url} rel="noopener" target="_blank">
+                  {item.text}
+                </a>
+              ))}
             </div>
           </section>
         </main>

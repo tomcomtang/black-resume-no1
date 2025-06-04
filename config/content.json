@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Portfolio 🚀 &mdash; Frontend Developer",
+    "description": "A passionate Front End Developer dedicated to turning ideas into real-life products.",
+    "ogTitle": "Portfolio 🚀 &mdash; Frontend Developer",
+    "ogUrl": "https://example.com/",
+    "ogImage": "webp/preview-image.png",
+    "ogDescription": "A passionate Front End Developer dedicated to turning ideas into real-life products.",
+    "twitterTitle": "Portfolio 🚀 &mdash; Frontend Developer",
+    "twitterDescription": "A passionate Front End Developer dedicated to turning ideas into real-life products.",
+    "twitterImage": "webp/preview-image.png",
+    "twitterUrl": "https://example.com/"
+  },
+  "preloader": {
+    "skills": ["HTML", "CSS/SCSS", "JAVASCRIPT", "TYPESCRIPT", "REACT JS", "NEXT JS", "FRAMER MOTION"]
+  },
+  "header": {
+    "hero": {
+      "heading": ["turning ideas into ", "real life ", "products ", "is my calling."],
+      "cta": "VIEW PROJECTS"
+    },
+    "footer": {
+      "social": [
+        { "text": "👾 GH", "url": "https://github.com/example" },
+        { "text": "🐦 TW", "url": "https://twitter.com/example" },
+        { "text": "💼 LD", "url": "https://www.linkedin.com/in/example" },
+        { "text": "📸 IN", "url": "https://www.instagram.com/example" }
+      ]
+    }
+  },
+  "about": {
+    "text": "Hello stranger! 👋, I am a frontend engineer passionate about digital products that help people experience everyday life, not endure it."
+  },
+  "projects": {
+    "title": "Yeah, I work hard 💼",
+    "description": "Each project is unique. Here are some of my works.",
+    "items": [
+      {
+        "title": "NEXT JS, LOCOMOTIVE SCROLL, FRAMER MOTION",
+        "description": "Project description here...",
+        "displacement": "webp/myDistorsionImage.webp",
+        "image1": "webp/alexxandria-1.webp",
+        "image2": "webp/alexxandria-2.webp",
+        "subtitle": "Forque",
+        "url": "https://example.com/project1",
+        "socials": [
+          { "text": "dribble", "url": "#", "icon": "svg/dribble.svg" },
+          { "text": "github", "url": "https://github.com/example/project1", "icon": "svg/github.svg" }
+        ]
+      },
+      {
+        "title": "REACT JS, FRAMER MOTION",
+        "description": "Project description here...",
+        "displacement": "webp/myDistorsionImage.webp",
+        "image1": "webp/safarika-1.webp",
+        "image2": "webp/safarika-2.webp",
+        "subtitle": "Safarika",
+        "url": "https://example.com/project2",
+        "socials": [
+          { "text": "dribble", "url": "https://dribbble.com/example/project2", "icon": "svg/dribble.svg" },
+          { "text": "github", "url": "https://github.com/example/project2", "icon": "svg/github.svg" }
+        ]
+      },
+      {
+        "title": "NEXT JS, LOCOMOTIVE SCROLL, FRAMER MOTION",
+        "description": "Project description here...",
+        "displacement": "webp/myDistorsionImage.webp",
+        "image1": "webp/heatrow-1.webp",
+        "image2": "webp/heatrow-2.webp",
+        "subtitle": "Estate",
+        "url": "https://example.com/project3",
+        "socials": [
+          { "text": "dribble", "url": "#", "icon": "svg/dribble.svg" },
+          { "text": "github", "url": "https://github.com/example/project3", "icon": "svg/github.svg" }
+        ]
+      },
+      {
+        "title": "HTML, SCSS, JAVASCRIPT, GSAP",
+        "description": "Project description here...",
+        "displacement": "webp/myDistorsionImage.webp",
+        "image1": "webp/adeola-1.webp",
+        "image2": "webp/adeola-2.webp",
+        "subtitle": "version 1",
+        "url": "https://github.com/example/project4",
+        "socials": [
+          { "text": "dribble", "url": "https://dribbble.com/example/project4", "icon": "svg/dribble.svg" },
+          { "text": "github", "url": "https://github.com/example/project4", "icon": "svg/github.svg" }
+        ]
+      }
+    ]
+  },
+  "socials": [
+    { "text": "👾 GitHub", "url": "https://github.com/example" },
+    { "text": "🐦 Twitter", "url": "https://twitter.com/example" },
+    { "text": "💼 LinkedIn", "url": "https://www.linkedin.com/in/example" },
+    { "text": "📸 Instagram", "url": "https://www.instagram.com/example" }
+  ]
+} 

@@ -258,7 +258,10 @@
     }
 
     &__left {
-      margin-right: 6rem;
+      max-width: 3rem;
+      flex: 0 0 3rem;
+      margin-right: 2rem;
+      overflow: hidden;
       @media only screen and (max-width: 57em) {
         order: 2;
 
@@ -285,7 +288,8 @@
       }
     }
     &__middle {
-      width: 35rem;
+      min-width: 35rem !important;
+      width: 35rem !important;
       height: 45rem;
       background-size: cover;
       position: relative;
@@ -304,10 +308,11 @@
 
       canvas {
         position: absolute;
-        // border-radius: inherit !important;
         z-index: 0;
         width: 100% !important;
         height: 100% !important;
+        left: 0;
+        top: 0;
       }
 
       img {

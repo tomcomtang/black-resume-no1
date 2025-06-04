@@ -9,7 +9,8 @@
     "twitterTitle": "Portfolio 🚀 &mdash; Frontend Developer",
     "twitterDescription": "A passionate Front End Developer dedicated to turning ideas into real-life products.",
     "twitterImage": "webp/preview-image.png",
-    "twitterUrl": "https://example.com/"
+    "twitterUrl": "https://example.com/",
+    "author": "tomchild"
   },
   "preloader": {
     "skills": ["HTML", "CSS/SCSS", "JAVASCRIPT", "TYPESCRIPT", "REACT JS", "NEXT JS", "FRAMER MOTION"]

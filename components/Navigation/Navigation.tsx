@@ -41,7 +41,7 @@ export const Navigation = ({ isOpen, toggleOpen }: any) => {
         <Link href="/" className="brand-logo">
           <img
             className="brand-logo__icon"
-            src="svg/adeola-logo-left.svg"
+            src="svg/author-logo.svg"
             alt="adeola logo icon"
           />
           <span className="brand-logo__text-wrapper">
